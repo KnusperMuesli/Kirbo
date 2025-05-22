@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://b85r8npfiwanc"]
+[gd_scene load_steps=9 format=3 uid="uid://b85r8npfiwanc"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://ro240y0irmy3" path="res://character_body_2d.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://p5soymtcq5xg" path="res://assets/kirbo.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cru3mxi4b1cco" path="res://assets/gun.png" id="3_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://coddley454vox" path="res://assets/jump.wav" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://bre2brqe0ayus" path="res://assets/Death.mp3" id="4_hqtel"]
+[ext_resource type="AudioStream" uid="uid://ds32566kagpq6" path="res://assets/WinSound.wav" id="5_sweqy"]
+[ext_resource type="AudioStream" uid="uid://bs1s2su0nt81l" path="res://assets/reload.wav" id="7_1jxqw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 42.0
@@ -16,6 +21,13 @@ position = Vector2(0, -10)
 scale = Vector2(0.67625, 0.681875)
 texture = ExtResource("2_onrkg")
 
+[node name="SecretGun" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(46, -11.5)
+scale = Vector2(0.282051, 0.225)
+texture = ExtResource("3_2hs0m")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 rotation = 1.5708
@@ -23,3 +35,20 @@ shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_i3pqv")
+volume_db = -2.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_hqtel")
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_sweqy")
+
+[node name="Reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_1jxqw")

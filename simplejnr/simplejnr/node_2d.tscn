@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://7cxvggm7byct"]
+[gd_scene load_steps=5 format=3 uid="uid://7cxvggm7byct"]
 
 [ext_resource type="PackedScene" uid="uid://de2fg6jthd750" path="res://level-tile.tscn" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://b85r8npfiwanc" path="res://player.tscn" id="2_0e48y"]
 [ext_resource type="PackedScene" uid="uid://diksgxm22c1kq" path="res://coin.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://4c75qvogp3uv" path="res://enemy.tscn" id="4_0hol4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,10 +11,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1000.0
-offset_top = -1000.0
-offset_right = 9000.0
-offset_bottom = 9000.0
+offset_left = -1229.0
+offset_top = -1502.0
+offset_right = 8771.0
+offset_bottom = 8498.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.672077, 0.652829, 1)
@@ -22,13 +23,22 @@ color = Color(0, 0.672077, 0.652829, 1)
 position = Vector2(-74, 328)
 
 [node name="LevelTile2" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(194, 180)
+position = Vector2(243, 196)
 
 [node name="LevelTile3" parent="." instance=ExtResource("1_wtcfe")]
-position = Vector2(499, 132)
+position = Vector2(592, 168)
 
-[node name="LevelTile3" parent="LevelTile3" instance=ExtResource("1_wtcfe")]
-position = Vector2(373, 276)
+[node name="LevelTile4" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(1639, 109)
+
+[node name="LevelTile5" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(1085, 340)
+
+[node name="LevelTile7" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(1840, 316)
+
+[node name="LevelTile6" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(1644, 511)
 
 [node name="Player" parent="." instance=ExtResource("2_0e48y")]
 
@@ -79,4 +89,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Coin" parent="." instance=ExtResource("3_epypp")]
-position = Vector2(1008, 383)
+position = Vector2(1779, 64)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_0hol4")]
+position = Vector2(889, 129)
+
+[node name="Enemy" parent="." instance=ExtResource("4_0hol4")]
+position = Vector2(1673, 88)
